@@ -1,9 +1,15 @@
-function Card({ title, description, children, className = "" }) {
+function Card({
+  title,
+  description,
+  children,
+  className = "",
+  showDescription = true,
+}) {
   return (
     <div className={`reusable-card ${className}`}>
       {title && <h3>{title}</h3>}
 
-      {description && <p>{description}</p>}
+      {showDescription && description && <p>{description}</p>}
 
       {children}
     </div>

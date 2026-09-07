@@ -3,12 +3,14 @@ function Button({
   onClick,
   type = "button",
   className = "",
+  disabled = false,
 }) {
   return (
     <button
       type={type}
       onClick={onClick}
-      className={`common-button ${className}`}
+      disabled={disabled}
+      className={`reusable-button ${className}`}
     >
       {children}
     </button>

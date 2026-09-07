@@ -1,11 +1,17 @@
-function Card({ title, children, className = "" }) {
+function Card({
+  title,
+  description,
+  children,
+  className = "",
+  showDescription = true,
+}) {
   return (
-    <div className={`common-card ${className}`}>
-      {title && <h3 className="card-title">{title}</h3>}
+    <div className={`reusable-card ${className}`}>
+      {title && <h3>{title}</h3>}
 
-      <div className="card-content">
-        {children}
-      </div>
+      {showDescription && description && <p>{description}</p>}
+
+      {children}
     </div>
   );
 }

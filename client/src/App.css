@@ -455,3 +455,24 @@ body {
   margin-bottom: 25px;
   color: #64748b;
 }
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar-link:hover {
+  text-decoration: underline;
+}
+
+.navbar-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}

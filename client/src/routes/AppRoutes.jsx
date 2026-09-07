@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+
 import MainLayout from "../layout/MainLayout";
 
 import Login from "../pages/Login";
@@ -17,28 +18,21 @@ function AppRoutes() {
     <Routes>
       <Route path="/login" element={<Login />} />
 
-      <Route
-        path="/*"
-        element={
-          <MainLayout>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/home" element={<Home />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/members" element={<Members />} />
-              <Route path="/trainers" element={<Trainers />} />
-              <Route
-                path="/membership-plans"
-                element={<MembershipPlans />}
-              />
-              <Route path="/attendance" element={<Attendance />} />
-              <Route path="/payments" element={<Payments />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </MainLayout>
-        }
-      />
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/members" element={<Members />} />
+        <Route path="/trainers" element={<Trainers />} />
+        <Route
+          path="/membership-plans"
+          element={<MembershipPlans />}
+        />
+        <Route path="/attendance" element={<Attendance />} />
+        <Route path="/payments" element={<Payments />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
     </Routes>
   );
 }

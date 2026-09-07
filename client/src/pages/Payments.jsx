@@ -1,83 +1,30 @@
-import { useState } from "react";
-import Card from "../components/common/Card";
-import Button from "../components/common/Button";
+import PageTitle from "../components/ui/PageTitle";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
 
 function Payments() {
-  const [payments, setPayments] = useState([
-    {
-      id: 1,
-      member: "Karma Wangchuk",
-      date: "2026-09-06",
-      amount: "Nu. 1,500",
-      method: "Cash",
-      status: "Paid",
-    },
-    {
-      id: 2,
-      member: "Pema Choden",
-      date: "2026-09-05",
-      amount: "Nu. 4,000",
-      method: "Bank Transfer",
-      status: "Paid",
-    },
-    {
-      id: 3,
-      member: "Sonam Dorji",
-      date: "2026-09-04",
-      amount: "Nu. 1,500",
-      method: "Cash",
-      status: "Pending",
-    },
-  ]);
-
-  const handleAddPayment = () => {
-    const newPayment = {
-      id: payments.length + 1,
-      member: `New Member ${payments.length + 1}`,
-      date: "2026-09-06",
-      amount: "Nu. 1,500",
-      method: "Cash",
-      status: "Paid",
-    };
-
-    setPayments([...payments, newPayment]);
+  const handleMakePayment = () => {
+    alert("Make payment feature coming soon.");
   };
 
   return (
-    <section className="payments-page">
-      <h1>Payments</h1>
-      <p>Manage membership payments and payment records.</p>
+    <div>
+      <PageTitle
+        title="Payments"
+        subtitle="Manage membership payments and payment records."
+      />
 
-      <Card title="Payment Management">
-        <Button onClick={handleAddPayment}>Add Payment</Button>
+      <Card
+        title="Payment Management"
+        description="View payment history and manage member payments."
+      >
+        <p>Payment records will be displayed here.</p>
 
-        <div className="payments-table-wrapper">
-          <table className="payments-table">
-            <thead>
-              <tr>
-                <th>Member</th>
-                <th>Date</th>
-                <th>Amount</th>
-                <th>Payment Method</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {payments.map((payment) => (
-                <tr key={payment.id}>
-                  <td>{payment.member}</td>
-                  <td>{payment.date}</td>
-                  <td>{payment.amount}</td>
-                  <td>{payment.method}</td>
-                  <td>{payment.status}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <Button onClick={handleMakePayment}>
+          Make Payment
+        </Button>
       </Card>
-    </section>
+    </div>
   );
 }
 

@@ -1,21 +1,32 @@
-import Button from "../components/common/Button";
 import { useNavigate } from "react-router-dom";
+
+import PageTitle from "../components/ui/PageTitle";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
 
 function NotFound() {
   const navigate = useNavigate();
 
+  const handleGoHome = () => {
+    navigate("/home");
+  };
+
   return (
-    <section className="not-found-page">
-      <h1>404 - Page Not Found</h1>
+    <div>
+      <PageTitle
+        title="404 - Page Not Found"
+        subtitle="The page you are looking for does not exist."
+      />
 
-      <p>
-        The page you are looking for does not exist.
-      </p>
-
-      <Button onClick={() => navigate("/dashboard")}>
-        Go to Dashboard
-      </Button>
-    </section>
+      <Card
+        title="Page Not Found"
+        description="Please check the URL or return to the home page."
+      >
+        <Button onClick={handleGoHome}>
+          Go to Home
+        </Button>
+      </Card>
+    </div>
   );
 }
 

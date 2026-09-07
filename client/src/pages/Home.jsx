@@ -1,22 +1,24 @@
-import Button from "../components/common/Button";
-import { useNavigate } from "react-router-dom";
+import PageTitle from "../components/ui/PageTitle";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
 
 function Home() {
-  const navigate = useNavigate();
-
   return (
-    <section className="home-page">
-      <h1>Welcome to the Gym Management System</h1>
+    <div>
+      <PageTitle
+        title="Welcome to Gym Management System"
+        subtitle="Manage your gym activities easily and efficiently."
+      />
 
-      <p>
-        Manage members, trainers, attendance, membership plans, and payments
-        in one place.
-      </p>
-
-      <Button onClick={() => navigate("/login")}>
-        Login
-      </Button>
-    </section>
+      <Card
+        title="Get Started"
+        description="Use the navigation menu to manage members, trainers, payments, and attendance."
+      >
+        <Button onClick={() => alert("Welcome to the Gym Management System!")}>
+          Get Started
+        </Button>
+      </Card>
+    </div>
   );
 }
 

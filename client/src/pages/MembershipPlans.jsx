@@ -1,77 +1,60 @@
-import { useState } from "react";
-import Card from "../components/common/Card";
-import Button from "../components/common/Button";
+import PageTitle from "../components/ui/PageTitle";
+import Card from "../components/ui/Card";
+import Button from "../components/ui/Button";
 
 function MembershipPlans() {
-  const [plans, setPlans] = useState([
-    {
-      id: 1,
-      name: "Monthly Plan",
-      duration: "1 Month",
-      price: "Nu. 1,500",
-      benefits: "Gym access and basic equipment",
-    },
-    {
-      id: 2,
-      name: "Quarterly Plan",
-      duration: "3 Months",
-      price: "Nu. 4,000",
-      benefits: "Gym access and trainer guidance",
-    },
-    {
-      id: 3,
-      name: "Yearly Plan",
-      duration: "12 Months",
-      price: "Nu. 12,000",
-      benefits: "Full gym access and personal training",
-    },
-  ]);
-
   const handleAddPlan = () => {
-    const newPlan = {
-      id: plans.length + 1,
-      name: `New Plan ${plans.length + 1}`,
-      duration: "1 Month",
-      price: "Nu. 1,000",
-      benefits: "Basic gym access",
-    };
-
-    setPlans([...plans, newPlan]);
+    alert("Add membership plan feature coming soon.");
   };
 
   return (
-    <section className="membership-plans-page">
-      <h1>Membership Plans</h1>
-      <p>Manage gym membership plans and their pricing details.</p>
+    <div>
+      <PageTitle
+        title="Membership Plans"
+        subtitle="Manage the membership plans offered by the gym."
+      />
 
-      <Card title="Membership Plan Management">
-        <Button onClick={handleAddPlan}>Add Plan</Button>
+      <div className="dashboard-grid">
+        <Card
+          title="Basic Plan"
+          description="Suitable for beginners and casual gym members."
+        >
+          <h3>₹1,000 per month</h3>
 
-        <div className="plans-table-wrapper">
-          <table className="plans-table">
-            <thead>
-              <tr>
-                <th>Plan Name</th>
-                <th>Duration</th>
-                <th>Price</th>
-                <th>Benefits</th>
-              </tr>
-            </thead>
+          <Button onClick={() => alert("Basic Plan selected.")}>
+            View Plan
+          </Button>
+        </Card>
 
-            <tbody>
-              {plans.map((plan) => (
-                <tr key={plan.id}>
-                  <td>{plan.name}</td>
-                  <td>{plan.duration}</td>
-                  <td>{plan.price}</td>
-                  <td>{plan.benefits}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
-    </section>
+        <Card
+          title="Standard Plan"
+          description="A balanced plan for regular gym members."
+        >
+          <h3>₹2,000 per month</h3>
+
+          <Button onClick={() => alert("Standard Plan selected.")}>
+            View Plan
+          </Button>
+        </Card>
+
+        <Card
+          title="Premium Plan"
+          description="Includes additional facilities and services."
+        >
+          <h3>₹3,000 per month</h3>
+
+          <Button onClick={() => alert("Premium Plan selected.")}>
+            View Plan
+          </Button>
+        </Card>
+      </div>
+
+      <div style={{ marginTop: "20px" }}>
+        <Button onClick={handleAddPlan}>
+          Add Membership Plan
+        </Button>
+      </div>
+    </div>
   );
 }
 

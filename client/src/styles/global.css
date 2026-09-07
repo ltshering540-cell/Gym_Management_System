@@ -1,5 +1,6 @@
 :root {
   --primary-color: #3561dc;
+  --primary-color-dark: #2748b0;
   --background-color: #f1f3f6;
   --surface-color: #ffffff;
   --text-color: #172033;
@@ -18,10 +19,15 @@ body,
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--background-color);
   color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
 }
 
 button,
@@ -29,4 +35,17 @@ input,
 select,
 textarea {
   font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
 }

@@ -14,7 +14,9 @@ function Home() {
         title="Get Started"
         description="Use the navigation menu to manage members, trainers, payments, and attendance."
       >
-        <Button onClick={() => alert("Welcome to the Gym Management System!")}>
+        <Button
+          onClick={() => alert("Welcome to the Gym Management System!")}
+        >
           Get Started
         </Button>
       </Card>

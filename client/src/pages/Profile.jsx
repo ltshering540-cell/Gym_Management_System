@@ -10,7 +10,10 @@ function Profile() {
         subtitle="View and manage your administrator profile."
       />
 
-      <Card title="Admin Profile" description="Your account information">
+      <Card
+        title="Admin Profile"
+        description="Your account information"
+      >
         <p>
           <strong>Name:</strong> Admin
         </p>
@@ -23,7 +26,9 @@ function Profile() {
           <strong>Email:</strong> admin@gym.com
         </p>
 
-        <Button onClick={() => alert("Edit profile feature coming soon.")}>
+        <Button
+          onClick={() => alert("Edit profile feature coming soon.")}
+        >
           Edit Profile
         </Button>
       </Card>

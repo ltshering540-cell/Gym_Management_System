@@ -10,19 +10,31 @@ function Dashboard() {
       />
 
       <div className="dashboard-grid">
-        <Card title="Total Members" description="Currently registered members">
+        <Card
+          title="Total Members"
+          description="Currently registered members"
+        >
           <h2>120</h2>
         </Card>
 
-        <Card title="Active Trainers" description="Available gym trainers">
+        <Card
+          title="Active Trainers"
+          description="Available gym trainers"
+        >
           <h2>8</h2>
         </Card>
 
-        <Card title="Membership Plans" description="Available membership plans">
+        <Card
+          title="Membership Plans"
+          description="Available membership plans"
+        >
           <h2>5</h2>
         </Card>
 
-        <Card title="Monthly Payments" description="Payments received this month">
+        <Card
+          title="Monthly Payments"
+          description="Payments received this month"
+        >
           <h2>₹25,000</h2>
         </Card>
       </div>
